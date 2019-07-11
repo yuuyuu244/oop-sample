@@ -43,7 +43,7 @@ public class CardLayoutSample extends JFrame implements ActionListener {
 	    goToV2Button.addActionListener(this);
 	    goToV2Button.setActionCommand("View2");
 	    card1.add(goToV2Button);
-	    
+
 	    /* View2 */
 	    JPanel card2 = new JPanel();
 	    card2.add(new JLabel("View2"));
@@ -51,16 +51,16 @@ public class CardLayoutSample extends JFrame implements ActionListener {
 	    goToV1Button.addActionListener(this);
 	    goToV1Button.setActionCommand("View1");
 	    card2.add(goToV1Button);
-	    
+
 	    /* CardLayout準備 */
 	    this.panel = new JPanel();
 	    this.layout = new CardLayout();//CardLayoutの作成
 	    this.panel.setLayout(this.layout);
-	    
+
 	    /* panelにViewを追加 */
 	    this.panel.add(card1, "View1");
 	    this.panel.add(card2, "View2");
-	    
+
 	    // パネルの生成
 	    JPanel btnPanel = new JPanel();
 	    btnPanel.add(goToV2Button);
@@ -77,6 +77,7 @@ public class CardLayoutSample extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// 設定したコマンド文字列
 	    String cmd = e.getActionCommand();
+
 	    // パネルの切り替え
 	    layout.show(this.panel,cmd);
 	}
